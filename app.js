@@ -16,7 +16,8 @@ app.use(bp.urlencoded({extended: false }));
 app.use(flash());
 
 //mongoose.connect(process.env.DATABASEURL||'mongodb://localhost/mydb');
-mongoose.connect("mongodb://pal:Deep123@ds143893.mlab.com:43893/pal");
+console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL||"mongodb://localhost/mydb");
 /*var UserSchema = new mongoose.Schema({
     username: String,
     email:String,
