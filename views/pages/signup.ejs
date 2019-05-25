@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partial/head %>
+</head>
+<body>
+	<%	include ../partial/header %>
+	
+		<section id="contact" class="section" >
+  <div class="container">
+      <div class="section-header" style="margin-top:100px;">
+                <h2 class="wow fadeInDown animated">Sign Up Here</h2>
+                
+            </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 conForm">       
+        <div id="message"></div>
+        <form method="post" action="/signup" name="cform" id="cform">
+          <input name="name" id="name" type="text" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your name..." >
+          <input name="email" id="email" type="email" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="Email Address..." >
+          <input name="password" id="password" type="password" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Password" >
+         
+          <input type="submit" id="submit" name="send" class="submitBnt" value="Sign Up">
+          <div id="simple-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+	
+	<%	include ../partial/footer %>
+</body>
+</html>

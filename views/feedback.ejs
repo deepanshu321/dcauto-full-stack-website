@@ -1,0 +1,58 @@
+
+
+<html>
+<head>
+	<% include ./partial/head %>
+	</head>
+<body>
+	<% include ./partial/header %>
+	<section id="contact" class="section" >
+  <div class="container">
+      <div class="section-header" style="margin-top:100px;">
+                <h2 class="wow fadeInDown animated">Please provide your Feedback</h2>
+                
+            </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 conForm">       
+        
+        <form method="post" action="/feedback/rr" >
+          <input name="username" id="email" type="text" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="Username" required >
+          <input name="email" id="email" type="email" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="email address" required>
+          <input name="rating" id="email" type="text" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="rating out of 10" required>
+          <textarea name="feedback" id="email" type="text" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="type your valuable feedback" required></textarea>
+          
+         
+          <input type="submit"   class="submitBnt" value="Submit">
+          
+          	
+          	
+          </div>
+        </form>
+
+    </div>
+</div>
+<%feedback.sort(function(a, b) {
+    return parseFloat(b.rating) - parseFloat(a.rating);
+});%>
+    <div class="container-fluid" style="background-color:#FFC107 ">
+    	
+        <% feedback.forEach(function(f){ %>
+          	<div class="col-md-8 col-md-offset-2  alert alert-secondary  " style="border:1px solid black;border-radius: 8px; margin-top:20px;" role="alert" >
+          		
+          		<div style="color:red; " >written by<strong style="color:green;"> <%= f.username  %></strong><p style="float:right; color :red;font-size: 20px"><%= f.rating  %>/10</p></div>
+          		<br>
+          			
+          		<div style="color:#000000;font-size: 15px; margin-left:20px;"><%=  f.feedback %></div>
+          		
+          		
+          	</div>
+      		<%})%>
+          
+      
+    </div>
+</div>
+  
+</section>
+	<%	include ./partial/footer %>
+</body>
+</html>
